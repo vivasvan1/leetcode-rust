@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/3sum/description/
+
 use std::collections::HashMap;
 
 pub struct Solution;
