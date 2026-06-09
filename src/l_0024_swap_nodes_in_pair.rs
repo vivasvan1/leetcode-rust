@@ -27,7 +27,7 @@ impl Solution {
         // }
         let mut head = head;
 
-        if (head.is_none() || head.as_ref().unwrap().next.is_none()) {
+        if head.is_none() || head.as_ref().unwrap().next.is_none() {
             return head;
         }
 
@@ -41,7 +41,7 @@ impl Solution {
 
             first.next = third;
             second.next = Some(first);
-            
+
             *current = Some(second);
 
             current = &mut current.as_mut().unwrap().next.as_mut().unwrap().next;
