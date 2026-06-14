@@ -73,21 +73,21 @@ impl Solution {
                     if i == 0 {
                         node.next = next_group_head.take();
                         prev = Some(node);
-                    }else if i == k-1 {
+                    } else if i == k - 1 {
                         node.next = prev.take();
                         prev_group_head.next = Some(node);
-                    }else{
+                    } else {
                         node.next = prev.take();
-                        prev= Some(node);
+                        prev = Some(node);
                     }
 
                     current_segment = next_node;
                 }
             }
-            
+
             // println!("prev_group_head : {:?}", prev_group_head);
             let mut ptr = prev_group_head.next.as_mut();
-            for _ in 0..k-1 {
+            for _ in 0..k - 1 {
                 ptr = ptr.unwrap().next.as_mut();
             }
             match ptr {
